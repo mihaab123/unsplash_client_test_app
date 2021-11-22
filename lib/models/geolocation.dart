@@ -12,7 +12,6 @@ class GeoLocation {
   final String? country;
   final GeoPosition position;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'name': name,
@@ -44,7 +43,6 @@ class GeoPosition {
   final double? latitude;
   final double? longitude;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'latitude': latitude,

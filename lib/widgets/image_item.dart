@@ -1,12 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
 import 'package:unsplash_client_test_app/models/photo_model.dart';
 import 'package:unsplash_client_test_app/screens/image_screen.dart';
 
 class ImageItem extends StatelessWidget {
   final Photo image;
 
-  const ImageItem(this.image);
+  const ImageItem(this.image, {Key? key}) : super(key: key);
 
   /// Adds rounded corners to a given [widget].
   Widget _addRoundedCorners(Widget widget) =>

@@ -96,7 +96,6 @@ class Photo {
 
   double get ratio => width / height;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'id': id,
@@ -212,7 +211,6 @@ class Tag {
 
   final String title;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'title': title,
@@ -242,7 +240,6 @@ class PhotoLinks {
   final Uri download;
   final Uri downloadLocation;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'self': self.toString(),
@@ -282,7 +279,6 @@ class Exif {
   final String? focalLength;
   final int? iso;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'make': make,
@@ -324,7 +320,6 @@ class PhotoUrls {
   final Uri small;
   final Uri thumb;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'raw': raw.toString(),

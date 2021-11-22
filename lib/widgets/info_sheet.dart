@@ -6,7 +6,7 @@ import 'package:unsplash_client_test_app/widgets/loading_indicator.dart';
 class InfoSheet extends StatelessWidget {
   final Photo image;
 
-  InfoSheet(this.image);
+  const InfoSheet(this.image, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => /*Container*/ Card(
@@ -29,17 +29,17 @@ class InfoSheet extends StatelessWidget {
                               image.user.profileImage.medium.toString()),
                           Text(
                             '${image.user.firstName} ${image.user.lastName}',
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black87,
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Padding(
                             padding: const EdgeInsets.only(right: 16.0),
                             child: Text(
                               '${image.createdAt}'.toUpperCase(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.black26,
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.bold),
@@ -56,7 +56,7 @@ class InfoSheet extends StatelessWidget {
                     _buildExifWidget(image.exif as Exif),
                     // filter null views
                   ].where((w) => w != null).toList()
-                : <Widget>[LoadingIndicator(Colors.black26)]),
+                : <Widget>[const LoadingIndicator(Colors.black26)]),
         /*decoration: new BoxDecoration(
             color: Colors.grey[50],
             borderRadius: new BorderRadius.only(
@@ -94,17 +94,17 @@ class InfoSheet extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16.0, bottom: 16.0, right: 16.0),
           child: Row(
             children: <Widget>[
-              Padding(
+              const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.location_on,
                     color: Colors.black54,
                   )),
               Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
                     '${location.city}, ${location.country}'.toUpperCase(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 14.0,
                       fontWeight: FontWeight.bold,
@@ -121,7 +121,7 @@ class InfoSheet extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16.0, bottom: 16.0, right: 16.0),
           child: Row(
             children: <Widget>[
-              Padding(
+              const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.photo_camera,
@@ -131,11 +131,11 @@ class InfoSheet extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           left: 8.0, right: 8.0, top: 4.0, bottom: 4.0),
                       child: Text(
                         '${exif.model}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black54,
                             fontSize: 14.0,
                             fontWeight: FontWeight.bold),
@@ -158,11 +158,11 @@ class InfoSheet extends StatelessWidget {
   /// Builds exif info item that displays given [data].
   Widget _buildExifInfoItem(String data) => data != null
       ? Padding(
-          padding:
-              EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0, bottom: 4.0),
+          padding: const EdgeInsets.only(
+              left: 8.0, right: 8.0, top: 4.0, bottom: 4.0),
           child: Text(
             data,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black26,
                 fontSize: 12.0,
                 fontWeight: FontWeight.bold),

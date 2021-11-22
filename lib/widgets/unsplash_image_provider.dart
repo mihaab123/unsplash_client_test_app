@@ -1,7 +1,7 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:unsplash_client_test_app/models/photo_model.dart';
 
 class UnsplashImageProvider {
@@ -76,7 +76,7 @@ class UnsplashImageProvider {
       return response.data;
     } else {
       // something went wrong :(
-      print("Http error: ${response.statusCode}");
+      debugPrint("Http error: ${response.statusCode}");
       // return empty list
       return [];
     }

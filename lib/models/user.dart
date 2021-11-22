@@ -50,7 +50,6 @@ class User {
   final UserBadge? badge;
   final UserLinks links;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'id': id,
@@ -127,7 +126,6 @@ class ProfileImage {
   final Uri medium;
   final Uri large;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'small': small.toString(),
@@ -161,7 +159,6 @@ class UserBadge {
   final String slug;
   final Uri link;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'title': title,
@@ -203,7 +200,6 @@ class UserLinks {
   final Uri followers;
   final Uri following;
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'self': self.toString(),

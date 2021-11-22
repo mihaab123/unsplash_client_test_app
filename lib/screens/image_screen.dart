@@ -8,7 +8,7 @@ import 'package:unsplash_client_test_app/widgets/unsplash_image_provider.dart';
 class ImageScreen extends StatefulWidget {
   final String imageId, imageUrl;
 
-  ImageScreen(this.imageId, this.imageUrl, {Key? key}) : super(key: key);
+  const ImageScreen(this.imageId, this.imageUrl, {Key? key}) : super(key: key);
 
   @override
   _ImageScreenState createState() => _ImageScreenState();
@@ -17,7 +17,7 @@ class ImageScreen extends StatefulWidget {
 /// Provide a state for [ImageScreen].
 class _ImageScreenState extends State<ImageScreen> {
   /// create global key to show info bottom sheet
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   /// Bottomsheet controller
   late PersistentBottomSheetController bottomSheetController;
@@ -34,7 +34,6 @@ class _ImageScreenState extends State<ImageScreen> {
 
   /// Reloads the image from unsplash to get extra data, like: exif, location, ...
   _loadImage() async {
-    print(widget.imageId);
     Photo image = await UnsplashImageProvider.loadImage(widget.imageId);
     setState(() {
       this.image = image;
@@ -52,7 +51,7 @@ class _ImageScreenState extends State<ImageScreen> {
         leading:
             // back button
             IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back,
                   color: Colors.white,
                 ),
@@ -60,7 +59,7 @@ class _ImageScreenState extends State<ImageScreen> {
         actions: <Widget>[
           // show image info
           IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.info_outline,
                 color: Colors.white,
               ),
@@ -68,7 +67,7 @@ class _ImageScreenState extends State<ImageScreen> {
               onPressed: () => bottomSheetController = _showInfoBottomSheet()),
           // open in browser icon button
           IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.open_in_browser,
                 color: Colors.white,
               ),

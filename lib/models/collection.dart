@@ -31,7 +31,6 @@ class Collection {
     required this.links,
   }) : super();
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'id': id,
@@ -83,7 +82,6 @@ class CollectionLinks {
     required this.related,
   }) : super();
 
-  @override
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'self': self.toString(),

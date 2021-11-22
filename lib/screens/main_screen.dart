@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:unsplash_client_test_app/models/photo_model.dart';
-import 'package:unsplash_client_test_app/models/user.dart';
 import 'package:unsplash_client_test_app/widgets/image_item.dart';
 import 'package:unsplash_client_test_app/widgets/loading_indicator.dart';
 import 'package:unsplash_client_test_app/widgets/unsplash_image_provider.dart';
@@ -91,8 +90,6 @@ class _MainScreenState extends State<MainScreen> {
       images = res[1];
     }
 
-    // TODO: handle errors
-
     // update the state
     setState(() {
       // done loading
@@ -137,7 +134,7 @@ class _MainScreenState extends State<MainScreen> {
             // either search-field or just the title
             TextField(
                 keyboardType: TextInputType.text,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: 'Search...', border: InputBorder.none),
                 onSubmitted: (String keyword) =>
                     // search and display images associated to the keyword
