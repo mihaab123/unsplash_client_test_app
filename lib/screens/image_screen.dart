@@ -83,10 +83,10 @@ class _ImageScreenState extends State<ImageScreen> {
         minScale: PhotoViewComputedScale.covered,
         maxScale: PhotoViewComputedScale.covered,
         heroAttributes: PhotoViewHeroAttributes(tag: imageId),
-        /*loadingChild: const Center(
+        loadingBuilder: (context, progress) => const Center(
             child: CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(Colors.white70),
-        )),*/
+        )),
       );
 
   @override
